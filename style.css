@@ -1,0 +1,154 @@
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.about-authors {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-authors__heading {
+    margin: 0;
+}
+
+.about-authors__text_Elizabeth,
+.about-authors__text_Eric {
+    text-align: justify;
+}
+
+.intro__heading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.intro__text {
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+@media(max-width: 800px) {
+    body {
+        width: 100%;
+        max-width: 550px;
+        padding: 15px;
+    }
+    
+    .about-authors {
+        flex-wrap: wrap;
+    }
+
+    .about-authors__image_Elizabeth,
+    .about-authors__image_Eric {
+        width: 100%;
+    }
+
+    .intro {
+        width: 100%;
+    }
+
+    .contents-1__table,
+    .contents-2__table {
+        width: 100%;
+    }
+}
+
+@media(max-width: 500px) {
+    body {
+        font-size: 0.8em;
+    }
+}
+
+@media(max-width: 400px) {
+    body {
+        font-size: 0.7em;
+    }
+}
+
+@media(min-width: 801px) {
+    body {
+        max-width: 1000px;
+        padding: 5%;
+    }
+    
+    .about-authors {
+        flex-wrap: wrap;
+        max-height: 600px;
+    }
+
+    .about-authors__image_Elizabeth,
+    .about-authors__text_Elizabeth {
+        width: 42%;
+    }
+
+    .about-authors__image_Eric,
+    .about-authors__text_Eric {
+        width: 50%;
+    }
+
+    .contents__heading {
+        margin-left: 20%;
+    }
+
+    .contents-1__table {
+        margin-left: auto;
+        width: 60%;
+    }
+
+    .contents-2__table {
+        margin-left: auto;
+        width: 50%;
+    }
+
+    .intro {
+        width: 70%;
+        margin-left: auto;
+    }
+
+}
+
+@supports(display: grid) {
+    @media(min-width: 801px) {
+        .about-authors {
+            display: grid;
+            grid-template-areas: 
+                'he i2'
+                'i1 i2'
+                't1 t2'
+                'c2 c2';
+            column-gap: 5%;
+        }
+        
+        .about-authors__heading {
+            grid-area: he;
+        }
+        
+        .about-authors__image_Elizabeth {
+            grid-area: i1;
+            width: auto;
+        }
+        
+        .about-authors__image_Eric {
+            grid-area: i2;
+            width: auto;
+        }
+        
+        .about-authors__text_Elizabeth {
+            grid-area: t1;
+            width: auto;
+        }
+        
+        .about-authors__text_Eric {
+            grid-area: t2;
+            width: auto;
+        }
+    }
+}
