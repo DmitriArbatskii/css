@@ -10,12 +10,54 @@ body {
 
 .about-authors__heading {
     margin: 0;
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+    100% {
+    transform: translateX(0);
+    }
+} 
+
+.about-authors__image_Elizabeth,
+.about-authors__image_Eric {
+    animation-name: zoomIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .about-authors__text_Elizabeth,
 .about-authors__text_Eric {
     text-align: justify;
 }
+
+.about-authors__text_Elizabeth:hover,
+.about-authors__text_Eric:hover {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    0% {color: black;}
+    100% {color: blue;}
+} 
 
 .intro__heading {
     font-family: Arial, Helvetica, sans-serif;
@@ -25,6 +67,23 @@ body {
 .intro__text {
     text-align: justify;
     font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.5s 0s ease;
+}
+
+.intro__text:hover {
+    background-color: aquamarine;
+    transform: scale(1.1);
+}
+
+table td {
+    transition-property: color;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    transition-delay: 1s;
+}
+
+table td:hover {
+    color: blue;
 }
 
 footer {
@@ -108,9 +167,12 @@ footer {
         width: 50%;
     }
 
+    .contents__intro {
+        margin-left: auto;
+    }
+
     .intro {
         width: 70%;
-        margin-left: auto;
     }
 
 }
